@@ -1,0 +1,55 @@
+{
+    "name": "gvsu-web-team/hotels",
+    "description": "Your Package Description here",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Justin Wickenheiser",
+            "email": "wickenju@gvsu.edu"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable":true,
+    "require": {
+        "facade/ignition-contracts": "^1.0"
+    },
+    "require-dev": {
+        "php": "^8.2",
+        "illuminate/http": "^10.1",
+        "illuminate/routing": "^10.1",
+        "illuminate/support": "^10.1",
+        "laravel/framework": "^10.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GvsuWebTeam\\Hotels\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GvsuWebTeam\\Hotels\\Tests\\":"tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GvsuWebTeam\\Hotels\\Providers\\ServiceProvider"
+            ],
+            "aliases": {
+                "GvsuWebTeam": "GvsuWebTeam\\Hotels\\Facades\\HotelsFacade",
+                "Breadcrumbs": "GvsuWebTeam\\Hotels\\Breadcrumbs\\Breadcrumbs"
+            }
+        }
+    }
+}
